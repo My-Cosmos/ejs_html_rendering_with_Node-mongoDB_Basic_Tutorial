@@ -1,0 +1,19 @@
+{
+  "name": "ejs_html_rendering_with_firebase",
+  "version": "1.0.0",
+  "description": "1. Using ejs(template engine for js) to render dynamic data/response from the server to the HTML file with node/javascript\r     1. EJS enables the injection of dynamic data into HTML templates.\r     2. Templates can be reused across different parts of an application.\r     3. Allows use of JavaScript for looping, conditionals, and more within HTML. <br>\r     Example:- ( [More info](https://stackoverflow.com/questions/64144316/what-is-ejs-what-is-the-use-of-ejs) )<br> \r     ```\r     <body>\r         <h1><%= title %></h1>\r         <ul>\r             <% items.forEach(item => { %>\r                 <li><%= item %></li>\r             <% }); %>\r         </ul>\r     </body>\r     ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/My-Cosmos/ejs_html_rendering_with_firebase.git"
+  },
+  "author": "Zico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/My-Cosmos/ejs_html_rendering_with_firebase/issues"
+  },
+  "homepage": "https://github.com/My-Cosmos/ejs_html_rendering_with_firebase#readme"
+}
