@@ -1,13 +1,19 @@
-~ To render html using backend(express backend) we need to setup **view Engine**
-~~ There are many view engine available there, those are pub,ejs e.t.c
+## What is middleware?
+
+1. Example:-
+    1. Assume that we have [ app.get('/', (req,res)=>{}) ] '/' route in our app,
+
+        2. Now we want that if any req come to our server and before going to '/' this route that req should go from some function,
+        ```
+        This execution of the function before going to '/' route is known as middleware.
+        ```
 
 
-Server e kono Request ele [ like localhost:3000/, localhost:3000/about, localhost/post, /contactus e.t.c ]
-ei function ta chole -> .createServer((req,res)=>{})
-```
-const server = http.createServer((req,res)=>{
-  console.log(req.url);
-  res.end("Hi");
-})
+amader server e kono request ele seta '/' route e jaoar agey amar lekha ekta function er moddhe diye jaak, ei function guloke middleware bole.
 
-```
+
+## req,res,next();
+
+1. Inside middleware we need to write **next();** to go to respective route.
+2. And generally we don't send [res.send()] any response from middleware, if any error comes we log and throw the error.
+3. We only write next() to fo to the respective route from where the request has come.
