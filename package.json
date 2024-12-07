@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/My-Cosmos/ejs_html_rendering_with_firebase/issues"
   },
-  "homepage": "https://github.com/My-Cosmos/ejs_html_rendering_with_firebase#readme"
+  "homepage": "https://github.com/My-Cosmos/ejs_html_rendering_with_firebase#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
