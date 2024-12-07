@@ -1,19 +1,31 @@
-## What is middleware?
+### To hide the informations from the url in /get-form-data route we need to use post request.
+```
+like instead of using ->
+app.get('/get-form-data',(req,res)=>{})
 
-1. Example:-
-    1. Assume that we have [ app.get('/', (req,res)=>{}) ] '/' route in our app,
+example:- http://localhost:3000/get-form-data?username=SinghfomUP&email=sangra&password=13234254
 
-        2. Now we want that if any req come to our server and before going to '/' this route that req should go from some function,
-        ```
-        This execution of the function before going to '/' route is known as middleware.
-        ```
+-----------------------------------------------------
+
+we need to use -> 
+app.post('/get-form-data', (req,res)=>{})
+
+example:- http://localhost:3000/get-form-data
+
+To hide password and other sensitive information from the req_url
+```
 
 
-amader server e kono request ele seta '/' route e jaoar agey amar lekha ekta function er moddhe diye jaak, ei function guloke middleware bole.
+### Another thing is that in HTML
 
+```
+<form action="/get-form-data"></form> this form action by default hits get request,
 
-## req,res,next();
+if we want to hit post req then with the backend along with ->
 
-1. Inside middleware we need to write **next();** to go to respective route.
-2. And generally we don't send [res.send()] any response from middleware, if any error comes we log and throw the error.
-3. We only write next() to fo to the respective route from where the request has come.
+app.post('/get-form-data', (req,res)=>{});
+
+we need to add method="post" in the form ->
+
+<form action="/get-form-data" method="post"></form>
+```
