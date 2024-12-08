@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 // ~ importing userModel to use it
 const userModel = require('./models/user');
+// ~ importing dbConnection
+const dbConnection = require('./config/db');
 // ~ To Read Data/req.body in Post request for express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
