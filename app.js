@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
+app.use(morgan('dev'));
 // ~ importing userModel to use it
 const userModel = require('./models/user');
 // ~ importing dbConnection
@@ -23,6 +25,24 @@ app.post('/get-form-data', (req,res)=>{
   console.log(req.body);
   return res.send("Data Received");
 })
+
+
+app.get('/register',(req,res)=>{
+  res.render('register');
+});
+
+app.post('/register', (req,res)=>{
+  // ~ post method e data ase "req.body" tey.
+  console.log(req.body);
+  // ~ object destructuring
+  const {username, email, password} = req.body;  
+  //console.log(username, email, password);
+  
+  
+
+  res.send("User Registered");
+});
+
 
 
 app.listen(3000);

@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HomePage</title>
-  <link rel="stylesheet" href="home.css">
-</head>
-<body>
-  <div class="container">
-    <h1>This is Home Page</h1>
-    <div class="btn">
-      <a href="/login">click here to go login page</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+    h1.head {
+      margin-top: -73.5vh;
+      margin-bottom: 6vh;
+    }
+    .button_container {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .btn{
+      padding: 5px 2px;
+    }
+    button{
+      border: none;
+      border-radius: 9px;
+    }
+    button:hover{
+      border-radius: 9px;
+      padding: 18px;
+      background-color: aquamarine;
+      border: 2px solid navy;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1 class="head">This is Home Page</h1>
+      <div class="button_container">
+        <button class="btn">
+          <a href="/login">click here to go login page</a>
+        </button>
+        <button class="btn">
+          <a href="/register">click here to go Register page</a>
+        </button>
+      </div>
     </div>
-  </div>
-</body>
-<script src="home.js"></script>
+  </body>
+  <script src="home.js"></script>
 </html>
