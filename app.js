@@ -31,13 +31,23 @@ app.get('/register',(req,res)=>{
   res.render('register');
 });
 
-app.post('/register', (req,res)=>{
+app.post('/register', async (req,res)=>{
   // ~ post method e data ase "req.body" tey.
   console.log(req.body);
   // ~ object destructuring
   const {username, email, password} = req.body;  
   //console.log(username, email, password);
-  
+
+
+  // ~ userModel is very important because if we want to perform any operation inside mongodb database userModel is required for every operation
+  //  ~~ currently we are creating user into our database
+  //    ~~~ and it takes object as a parameter
+  await userModel.create({
+    username: username,
+    email: email,
+    password: password
+  })
+
   
 
   res.send("User Registered");
