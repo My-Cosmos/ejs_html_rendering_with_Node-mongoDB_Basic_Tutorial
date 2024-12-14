@@ -42,7 +42,7 @@ app.post('/register', async (req,res)=>{
   // ~ userModel is very important because if we want to perform any operation inside mongodb database userModel is required for every operation
   //  ~~ currently we are creating user into our database
   //    ~~~ and it takes object as a parameter
-  await userModel.create({
+  const newUser = await userModel.create({
     username: username,
     email: email,
     password: password
@@ -50,7 +50,15 @@ app.post('/register', async (req,res)=>{
 
   
 
-  res.send("User Registered");
+  res.send(`User Registered and the new user is:- \n ${newUser}`);
+});
+
+
+app.get('/get-users', /* async */ (req,res)=>{
+  /* const allUsers = await userModel.find(); */
+  userModel.find().then((allUsers)=>{
+    res.send(allUsers);
+  })
 });
 
 
