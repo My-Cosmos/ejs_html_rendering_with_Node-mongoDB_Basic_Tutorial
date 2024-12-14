@@ -56,7 +56,9 @@ app.post('/register', async (req,res)=>{
 
 app.get('/get-users', /* async */ (req,res)=>{
   /* const allUsers = await userModel.find(); */
-  userModel.find().then((allUsers)=>{
+  userModel.find({
+    username: 't'
+  }).then((allUsers)=>{
     res.send(allUsers);
   })
 });
