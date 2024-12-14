@@ -74,6 +74,17 @@ app.get('/get-single-user', /* async */ (req,res)=>{
   });
 });
 
-
+// update a userEmail whose username is 't' and update email to 'updatedUser@success.com'
+app.get('/update-user', async (req,res)=>{
+  await userModel.findOneAndUpdate(
+    {
+      username: 't' //condition to match user by using 'username' key value
+    },
+    {
+      email: 'updatedUser@success.com' //action to perform by using 'email' key value
+    }
+  );
+  res.send("User Updated");
+})
 
 app.listen(3000);
