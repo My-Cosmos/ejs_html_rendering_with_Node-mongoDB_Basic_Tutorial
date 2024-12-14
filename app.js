@@ -54,13 +54,24 @@ app.post('/register', async (req,res)=>{
 });
 
 
-app.get('/get-users', /* async */ (req,res)=>{
+app.get('/get-all-users', /* async */ (req,res)=>{
   /* const allUsers = await userModel.find(); */
-  userModel.find({
-    username: 't'
-  }).then((allUsers)=>{
+  userModel.find().then((allUsers)=>{
     res.send(allUsers);
   })
+});
+app.get('/get-single-user', /* async */ (req,res)=>{
+  /* const allUsers = await userModel.find(); */
+  userModel.findOne().then((oneUser)=>{
+    res.send(oneUser);
+  })
+
+  // get single user whose name is t
+  userModel.findOne({
+    username: 't'
+  }).then((user_t)=>{
+    console.log(user_t);// returns the first user whose username is 't'
+  });
 });
 
 

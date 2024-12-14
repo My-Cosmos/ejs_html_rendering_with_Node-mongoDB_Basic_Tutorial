@@ -9,3 +9,8 @@
 ```
 "__v: 0" in mongodb database -> is also created by mongoose which indicates that how many times a user is modified.
 ```
+
+### .find() method
+If there is a nonExisting condition given to .find() - method it returns -> **[]** - empty object.
+### .findOne() method
+returns -> **null** if the condition isn't matched.
